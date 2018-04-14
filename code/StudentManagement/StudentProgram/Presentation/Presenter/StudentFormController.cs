@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using StudentManagement.Business;
-using StudentManagement.Business.Entity;
-using StudentManagement.Presentation.View;
+using StudentProgram.Presentation.View;
 
-namespace StudentManagement.Presentation.Presenter
+namespace StudentProgram.Presentation.Presenter
 {
     class StudentFormController
     {

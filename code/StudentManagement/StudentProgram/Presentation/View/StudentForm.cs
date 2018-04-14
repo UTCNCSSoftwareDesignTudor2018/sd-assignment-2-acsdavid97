@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 using StudentManagement.Business;
 using StudentManagement.Business.Entity;
-using StudentManagement.Presentation.Presenter;
+using StudentProgram.Presentation.Presenter;
 
-namespace StudentManagement.Presentation.View
+namespace StudentProgram.Presentation.View
 {
     public partial class StudentForm : Form
     {

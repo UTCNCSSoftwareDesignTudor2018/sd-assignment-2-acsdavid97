@@ -1,4 +1,4 @@
-﻿namespace StudentManagement.Presentation.View
+﻿namespace StudentProgram.Presentation.View
 {
     partial class StudentForm
     {

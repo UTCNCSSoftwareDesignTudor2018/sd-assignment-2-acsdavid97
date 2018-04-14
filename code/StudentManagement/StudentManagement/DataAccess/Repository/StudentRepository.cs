@@ -6,7 +6,7 @@ using StudentManagement.Business.Entity;
 
 namespace StudentManagement.DataAccess.Repository
 {
-    class StudentRepository : IStudentRepository
+    public class StudentRepository : IStudentRepository
     {
         private readonly IUniversityDbContext _universityDbContext;
 

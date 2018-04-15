@@ -29,18 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.nameLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.groupLabel = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.cardNumberLabel = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.personalNumbericalCodeLabel = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.addressLabel = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.updateButton = new System.Windows.Forms.Button();
             this.enrolledCourseList = new System.Windows.Forms.ListBox();
             this.studentCourseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.enrolledCoursesLabel = new System.Windows.Forms.Label();
@@ -50,113 +39,28 @@
             this.availableCourseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.enrollButton = new System.Windows.Forms.Button();
             this.gradeListBox = new System.Windows.Forms.ListBox();
-            this.gradeLabel = new System.Windows.Forms.Label();
             this.gradeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gradeLabel = new System.Windows.Forms.Label();
+            this.nameLabel = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.groupLabel = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.cardNumberLabel = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.personalNumbericalCodeLabel = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.addressLabel = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.updateButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentCourseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.availableCourseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gradeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // nameLabel
-            // 
-            this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(12, 50);
-            this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(38, 13);
-            this.nameLabel.TabIndex = 0;
-            this.nameLabel.Text = "Name:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentBindingSource, "Name", true));
-            this.textBox1.Location = new System.Drawing.Point(152, 43);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(192, 20);
-            this.textBox1.TabIndex = 1;
-            // 
             // studentBindingSource
             // 
             this.studentBindingSource.DataSource = typeof(StudentManagement.Business.Entity.Student);
-            // 
-            // groupLabel
-            // 
-            this.groupLabel.AutoSize = true;
-            this.groupLabel.Location = new System.Drawing.Point(12, 107);
-            this.groupLabel.Name = "groupLabel";
-            this.groupLabel.Size = new System.Drawing.Size(39, 13);
-            this.groupLabel.TabIndex = 2;
-            this.groupLabel.Text = "Group:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentBindingSource, "CardNumber", true));
-            this.textBox3.Location = new System.Drawing.Point(152, 170);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(192, 20);
-            this.textBox3.TabIndex = 5;
-            // 
-            // cardNumberLabel
-            // 
-            this.cardNumberLabel.AutoSize = true;
-            this.cardNumberLabel.Location = new System.Drawing.Point(12, 177);
-            this.cardNumberLabel.Name = "cardNumberLabel";
-            this.cardNumberLabel.Size = new System.Drawing.Size(70, 13);
-            this.cardNumberLabel.TabIndex = 4;
-            this.cardNumberLabel.Text = "Card number:";
-            // 
-            // textBox4
-            // 
-            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentBindingSource, "PersonalNumericalCode", true));
-            this.textBox4.Location = new System.Drawing.Point(152, 226);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(192, 20);
-            this.textBox4.TabIndex = 7;
-            // 
-            // personalNumbericalCodeLabel
-            // 
-            this.personalNumbericalCodeLabel.AutoSize = true;
-            this.personalNumbericalCodeLabel.Location = new System.Drawing.Point(12, 233);
-            this.personalNumbericalCodeLabel.Name = "personalNumbericalCodeLabel";
-            this.personalNumbericalCodeLabel.Size = new System.Drawing.Size(126, 13);
-            this.personalNumbericalCodeLabel.TabIndex = 6;
-            this.personalNumbericalCodeLabel.Text = "Personal numerical code:";
-            // 
-            // textBox5
-            // 
-            this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentBindingSource, "Address", true));
-            this.textBox5.Location = new System.Drawing.Point(152, 305);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(192, 20);
-            this.textBox5.TabIndex = 9;
-            // 
-            // addressLabel
-            // 
-            this.addressLabel.AutoSize = true;
-            this.addressLabel.Location = new System.Drawing.Point(12, 312);
-            this.addressLabel.Name = "addressLabel";
-            this.addressLabel.Size = new System.Drawing.Size(48, 13);
-            this.addressLabel.TabIndex = 8;
-            this.addressLabel.Text = "Address:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentBindingSource, "Group", true));
-            this.textBox2.Location = new System.Drawing.Point(152, 100);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(192, 20);
-            this.textBox2.TabIndex = 3;
-            // 
-            // updateButton
-            // 
-            this.updateButton.Location = new System.Drawing.Point(279, 372);
-            this.updateButton.Name = "updateButton";
-            this.updateButton.Size = new System.Drawing.Size(75, 23);
-            this.updateButton.TabIndex = 10;
-            this.updateButton.Text = "UpdateForm";
-            this.updateButton.UseVisualStyleBackColor = true;
-            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // enrolledCourseList
             // 
@@ -232,6 +136,10 @@
             this.gradeListBox.Size = new System.Drawing.Size(284, 368);
             this.gradeListBox.TabIndex = 17;
             // 
+            // gradeBindingSource
+            // 
+            this.gradeBindingSource.DataSource = typeof(StudentManagement.Business.Entity.Grade);
+            // 
             // gradeLabel
             // 
             this.gradeLabel.AutoSize = true;
@@ -241,9 +149,101 @@
             this.gradeLabel.TabIndex = 18;
             this.gradeLabel.Text = "Grades:";
             // 
-            // gradeBindingSource
+            // nameLabel
             // 
-            this.gradeBindingSource.DataSource = typeof(StudentManagement.Business.Entity.Grade);
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.Location = new System.Drawing.Point(12, 50);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(38, 13);
+            this.nameLabel.TabIndex = 0;
+            this.nameLabel.Text = "Name:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentBindingSource, "Name", true));
+            this.textBox1.Location = new System.Drawing.Point(152, 43);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(192, 20);
+            this.textBox1.TabIndex = 1;
+            // 
+            // groupLabel
+            // 
+            this.groupLabel.AutoSize = true;
+            this.groupLabel.Location = new System.Drawing.Point(12, 107);
+            this.groupLabel.Name = "groupLabel";
+            this.groupLabel.Size = new System.Drawing.Size(39, 13);
+            this.groupLabel.TabIndex = 2;
+            this.groupLabel.Text = "Group:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentBindingSource, "Group", true));
+            this.textBox2.Location = new System.Drawing.Point(152, 100);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(192, 20);
+            this.textBox2.TabIndex = 3;
+            // 
+            // cardNumberLabel
+            // 
+            this.cardNumberLabel.AutoSize = true;
+            this.cardNumberLabel.Location = new System.Drawing.Point(12, 177);
+            this.cardNumberLabel.Name = "cardNumberLabel";
+            this.cardNumberLabel.Size = new System.Drawing.Size(70, 13);
+            this.cardNumberLabel.TabIndex = 4;
+            this.cardNumberLabel.Text = "Card number:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentBindingSource, "CardNumber", true));
+            this.textBox3.Location = new System.Drawing.Point(152, 170);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(192, 20);
+            this.textBox3.TabIndex = 5;
+            // 
+            // personalNumbericalCodeLabel
+            // 
+            this.personalNumbericalCodeLabel.AutoSize = true;
+            this.personalNumbericalCodeLabel.Location = new System.Drawing.Point(12, 233);
+            this.personalNumbericalCodeLabel.Name = "personalNumbericalCodeLabel";
+            this.personalNumbericalCodeLabel.Size = new System.Drawing.Size(126, 13);
+            this.personalNumbericalCodeLabel.TabIndex = 6;
+            this.personalNumbericalCodeLabel.Text = "Personal numerical code:";
+            // 
+            // textBox4
+            // 
+            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentBindingSource, "PersonalNumericalCode", true));
+            this.textBox4.Location = new System.Drawing.Point(152, 226);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(192, 20);
+            this.textBox4.TabIndex = 7;
+            // 
+            // addressLabel
+            // 
+            this.addressLabel.AutoSize = true;
+            this.addressLabel.Location = new System.Drawing.Point(12, 312);
+            this.addressLabel.Name = "addressLabel";
+            this.addressLabel.Size = new System.Drawing.Size(48, 13);
+            this.addressLabel.TabIndex = 8;
+            this.addressLabel.Text = "Address:";
+            // 
+            // textBox5
+            // 
+            this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentBindingSource, "Address", true));
+            this.textBox5.Location = new System.Drawing.Point(152, 305);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(192, 20);
+            this.textBox5.TabIndex = 9;
+            // 
+            // updateButton
+            // 
+            this.updateButton.Location = new System.Drawing.Point(279, 372);
+            this.updateButton.Name = "updateButton";
+            this.updateButton.Size = new System.Drawing.Size(75, 23);
+            this.updateButton.TabIndex = 10;
+            this.updateButton.Text = "UpdateForm";
+            this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // StudentForm
             // 
@@ -282,19 +282,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label nameLabel;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label groupLabel;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label cardNumberLabel;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label personalNumbericalCodeLabel;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label addressLabel;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.BindingSource studentBindingSource;
-        private System.Windows.Forms.Button updateButton;
         private System.Windows.Forms.ListBox enrolledCourseList;
         private System.Windows.Forms.BindingSource studentCourseBindingSource;
         private System.Windows.Forms.Label enrolledCoursesLabel;
@@ -306,5 +294,16 @@
         private System.Windows.Forms.ListBox gradeListBox;
         private System.Windows.Forms.Label gradeLabel;
         private System.Windows.Forms.BindingSource gradeBindingSource;
+        private System.Windows.Forms.Label nameLabel;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label groupLabel;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label cardNumberLabel;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label personalNumbericalCodeLabel;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label addressLabel;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button updateButton;
     }
 }

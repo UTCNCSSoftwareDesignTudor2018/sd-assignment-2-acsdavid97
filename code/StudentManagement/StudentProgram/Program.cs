@@ -20,10 +20,7 @@ namespace StudentProgram
         [STAThread]
         static void Main()
         {
-            var container = new UnityContainer();
-            container.RegisterInstance<IUniversityDbContext>(new UniversityDbContext());
-            container.RegisterType<ICourseRepository, CourseRepository>();
-            container.RegisterType<IStudentRepository, StudentRepository>();
+            var container = ContainerConfiguration.SetupUnityContainer();
 
             Database.SetInitializer(new UniversityDbInitializer());
 
@@ -36,5 +33,6 @@ namespace StudentProgram
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new StudentForm(student, studentBll));
         }
+
     }
 }

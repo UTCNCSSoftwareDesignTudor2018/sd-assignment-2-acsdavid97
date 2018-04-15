@@ -7,7 +7,7 @@ using StudentManagement.Business.Entity;
 
 namespace StudentManagement.DataAccess.Repository
 {
-    public interface IStudentRepository : IGenericRepository<Student>
+    public interface ITeacherRepository : IGenericRepository<Teacher>
     {
     }
 }

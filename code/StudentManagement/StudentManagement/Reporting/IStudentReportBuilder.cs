@@ -5,9 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using StudentManagement.Business.Entity;
 
-namespace StudentManagement.DataAccess.Repository
+namespace StudentManagement.Reporting
 {
-    public interface IStudentRepository : IGenericRepository<Student>
+    public interface IStudentReportBuilder : IDisposable
     {
+        IStudentReportBody CreateReportFor(Student student);
     }
 }

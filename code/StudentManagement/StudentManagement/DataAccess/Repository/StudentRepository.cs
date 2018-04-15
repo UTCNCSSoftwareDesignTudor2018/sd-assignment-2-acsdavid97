@@ -47,21 +47,5 @@ namespace StudentManagement.DataAccess.Repository
             _universityDbContext.Students.Remove(toDelete);
             _universityDbContext.SaveChanges();
         }
-
-        public void InsertCourseOfStudent(Student student, Course course)
-        {
-            _universityDbContext.Students.Attach(student);
-            _universityDbContext.Courses.Attach(course);
-            student.Courses.Add(course);
-            _universityDbContext.SaveChanges();
-        }
-
-        public void DeleteCourseOfStudent(Student student, Course course)
-        {
-            _universityDbContext.Students.Attach(student);
-            _universityDbContext.Courses.Attach(course);
-            student.Courses.Remove(course);
-            _universityDbContext.SaveChanges();
-        }
     }
 }

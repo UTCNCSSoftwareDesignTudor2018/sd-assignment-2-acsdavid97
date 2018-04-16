@@ -4,18 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using StudentManagement.Business.Entity;
+using StudentManagement.Business.Validator;
 using StudentManagement.DataAccess;
 using StudentManagement.DataAccess.Repository;
 
 namespace StudentManagement.Business
 {
+    /// <summary>
+    /// Business operations related to Teachers.
+    /// </summary>
     public class TeacherBll
     {
         private readonly ITeacherRepository _teacherRepository;
+        private readonly IGenericValidator<User> _userValidator;
 
-        public TeacherBll(ITeacherRepository teacherRepository)
+        public TeacherBll(ITeacherRepository teacherRepository, IGenericValidator<User> userValidator)
         {
             _teacherRepository = teacherRepository;
+            _userValidator = userValidator;
         }
 
         public IList<Teacher> GetTeachers()
@@ -25,6 +31,7 @@ namespace StudentManagement.Business
 
         public void AddTeacher(Teacher teacher)
         {
+            _userValidator.Validate(teacher);
             _teacherRepository.Insert(teacher);
         }
 
@@ -35,6 +42,7 @@ namespace StudentManagement.Business
 
         public void UpdateTeacher(Teacher teacher)
         {
+            _userValidator.Validate(teacher);
             _teacherRepository.Update(teacher);
         }
     }

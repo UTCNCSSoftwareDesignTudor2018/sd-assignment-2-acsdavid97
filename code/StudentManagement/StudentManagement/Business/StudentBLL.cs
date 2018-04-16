@@ -7,36 +7,37 @@ using System.Text;
 using System.Threading.Tasks;
 using MongoDB.Driver;
 using StudentManagement.Business.Entity;
+using StudentManagement.Business.Validator;
 using StudentManagement.DataAccess;
 using StudentManagement.DataAccess.Repository;
 using StudentManagement.Reporting;
 
 namespace StudentManagement.Business
 {
+    /// <summary>
+    /// Business logic operations for Students: Validation, Enrollment, CRUD.
+    /// </summary>
     public class StudentBll
     {
         private readonly IStudentRepository _studentRepository;
-        private readonly ICourseRepository _courseRepository;
+        private readonly IGenericValidator<User> _userValidator;
 
-        public StudentBll(IStudentRepository studentRepository, ICourseRepository courseRepository)
+        public StudentBll(IStudentRepository studentRepository, IGenericValidator<User> userValidator)
         {
             _studentRepository = studentRepository;
-            _courseRepository = courseRepository;
+            _userValidator = userValidator;
         }
 
         public void AddStudent(Student student)
         {
+            _userValidator.Validate(student);
             _studentRepository.Insert(student);
         }
 
         public void UpdateStudent(Student student)
         {
+            _userValidator.Validate(student);
             _studentRepository.Update(student);
-        }
-
-        public IList<Course> GetCourses()
-        {
-            return _courseRepository.GetAll();
         }
 
         public void UnEnrollStudent(Student student, Course course)

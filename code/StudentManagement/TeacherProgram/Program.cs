@@ -22,6 +22,9 @@ namespace TeacherProgram
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            Application.ThreadException += (sender, args) => MessageBox.Show(args.Exception.Message);
+            Application.SetUnhandledExceptionMode(UnhandledExceptionMode.Automatic); 
+
             var teacherForm = container.Resolve<HomeView>();
             Application.Run(teacherForm);
         }

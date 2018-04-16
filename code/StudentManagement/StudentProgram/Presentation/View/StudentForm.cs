@@ -12,11 +12,11 @@ namespace StudentProgram.Presentation.View
         private Student _student;
         private readonly StudentFormController _studentFormController;
 
-        public StudentForm(Student student, StudentBll studentBll)
+        public StudentForm(Student student, StudentBll studentBll, CourseBll courseBll)
         {
             _student = student;
             InitializeComponent();
-            _studentFormController = new StudentFormController(this, studentBll);
+            _studentFormController = new StudentFormController(this, studentBll, courseBll);
         }
 
 

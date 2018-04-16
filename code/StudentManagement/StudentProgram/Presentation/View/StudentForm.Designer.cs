@@ -38,7 +38,6 @@
             this.availableCourseList = new System.Windows.Forms.ListBox();
             this.availableCourseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.enrollButton = new System.Windows.Forms.Button();
-            this.gradeListBox = new System.Windows.Forms.ListBox();
             this.gradeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gradeLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
@@ -52,10 +51,15 @@
             this.addressLabel = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.updateButton = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.courseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateGradedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.markDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentCourseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.availableCourseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gradeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // studentBindingSource
@@ -126,15 +130,6 @@
             this.enrollButton.Text = "Enroll";
             this.enrollButton.UseVisualStyleBackColor = true;
             this.enrollButton.Click += new System.EventHandler(this.enrollButton_Click);
-            // 
-            // gradeListBox
-            // 
-            this.gradeListBox.DataSource = this.gradeBindingSource;
-            this.gradeListBox.FormattingEnabled = true;
-            this.gradeListBox.Location = new System.Drawing.Point(840, 61);
-            this.gradeListBox.Name = "gradeListBox";
-            this.gradeListBox.Size = new System.Drawing.Size(284, 368);
-            this.gradeListBox.TabIndex = 17;
             // 
             // gradeBindingSource
             // 
@@ -245,13 +240,51 @@
             this.updateButton.UseVisualStyleBackColor = true;
             this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.courseDataGridViewTextBoxColumn,
+            this.dateGradedDataGridViewTextBoxColumn,
+            this.markDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.gradeBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(801, 50);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(345, 376);
+            this.dataGridView1.TabIndex = 19;
+            // 
+            // courseDataGridViewTextBoxColumn
+            // 
+            this.courseDataGridViewTextBoxColumn.DataPropertyName = "Course";
+            this.courseDataGridViewTextBoxColumn.HeaderText = "Course";
+            this.courseDataGridViewTextBoxColumn.Name = "courseDataGridViewTextBoxColumn";
+            this.courseDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateGradedDataGridViewTextBoxColumn
+            // 
+            this.dateGradedDataGridViewTextBoxColumn.DataPropertyName = "DateGraded";
+            this.dateGradedDataGridViewTextBoxColumn.HeaderText = "DateGraded";
+            this.dateGradedDataGridViewTextBoxColumn.Name = "dateGradedDataGridViewTextBoxColumn";
+            this.dateGradedDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // markDataGridViewTextBoxColumn
+            // 
+            this.markDataGridViewTextBoxColumn.DataPropertyName = "Mark";
+            this.markDataGridViewTextBoxColumn.HeaderText = "Mark";
+            this.markDataGridViewTextBoxColumn.Name = "markDataGridViewTextBoxColumn";
+            this.markDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1136, 450);
+            this.ClientSize = new System.Drawing.Size(1180, 450);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.gradeLabel);
-            this.Controls.Add(this.gradeListBox);
             this.Controls.Add(this.enrollButton);
             this.Controls.Add(this.availableCourseList);
             this.Controls.Add(this.leaveButton);
@@ -276,6 +309,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.studentCourseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.availableCourseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gradeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,7 +325,6 @@
         private System.Windows.Forms.ListBox availableCourseList;
         private System.Windows.Forms.Button enrollButton;
         private System.Windows.Forms.BindingSource availableCourseBindingSource;
-        private System.Windows.Forms.ListBox gradeListBox;
         private System.Windows.Forms.Label gradeLabel;
         private System.Windows.Forms.BindingSource gradeBindingSource;
         private System.Windows.Forms.Label nameLabel;
@@ -305,5 +338,9 @@
         private System.Windows.Forms.Label addressLabel;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button updateButton;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn courseDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateGradedDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn markDataGridViewTextBoxColumn;
     }
 }

@@ -7,7 +7,7 @@ using StudentManagement.Reporting;
 
 namespace StudentManagement.DataAccess.Repository
 {
-    interface IReportRepository
+    public interface IReportRepository
     {
         void Insert(StudentReport studentReport);
         IList<StudentReport> GetAll();

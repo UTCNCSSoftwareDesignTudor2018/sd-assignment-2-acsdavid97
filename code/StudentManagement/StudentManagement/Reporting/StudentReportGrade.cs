@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StudentManagement.Reporting
 {
-    public class ReportGrade
+    public class StudentReportGrade
     {
         public string CourseName { get; set; }
         public DateTime DateTime { get; set; }

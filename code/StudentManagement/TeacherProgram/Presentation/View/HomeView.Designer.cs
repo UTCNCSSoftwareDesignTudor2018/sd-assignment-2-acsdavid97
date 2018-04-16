@@ -31,6 +31,7 @@
             this.studentsButton = new System.Windows.Forms.Button();
             this.teachersButton = new System.Windows.Forms.Button();
             this.coursesButton = new System.Windows.Forms.Button();
+            this.reportButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // studentsButton
@@ -63,11 +64,22 @@
             this.coursesButton.UseVisualStyleBackColor = true;
             this.coursesButton.Click += new System.EventHandler(this.coursesButton_Click);
             // 
+            // reportButton
+            // 
+            this.reportButton.Location = new System.Drawing.Point(322, 342);
+            this.reportButton.Name = "reportButton";
+            this.reportButton.Size = new System.Drawing.Size(75, 23);
+            this.reportButton.TabIndex = 3;
+            this.reportButton.Text = "Reports";
+            this.reportButton.UseVisualStyleBackColor = true;
+            this.reportButton.Click += new System.EventHandler(this.reportButton_Click);
+            // 
             // HomeView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.reportButton);
             this.Controls.Add(this.coursesButton);
             this.Controls.Add(this.teachersButton);
             this.Controls.Add(this.studentsButton);
@@ -82,5 +94,6 @@
         private System.Windows.Forms.Button studentsButton;
         private System.Windows.Forms.Button teachersButton;
         private System.Windows.Forms.Button coursesButton;
+        private System.Windows.Forms.Button reportButton;
     }
 }

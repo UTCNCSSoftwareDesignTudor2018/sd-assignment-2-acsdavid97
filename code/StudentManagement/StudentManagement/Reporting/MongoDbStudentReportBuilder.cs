@@ -23,7 +23,8 @@ namespace StudentManagement.Reporting
             StudentReport = new StudentReport
             {
                 StudentId = student.UserId,
-                Grades = new List<ReportGrade>()
+                StudentName = student.Name,
+                Grades = new List<StudentReportGrade>()
             };
 
             return new MongoDbStudentReportBody(this);

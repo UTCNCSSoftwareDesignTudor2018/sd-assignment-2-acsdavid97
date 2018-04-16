@@ -13,7 +13,7 @@ namespace StudentManagement.Reporting
 
         public IStudentReportBody AddGrade(Grade grade)
         {
-            _reportBuilder.StudentReport.Grades.Add(new ReportGrade
+            _reportBuilder.StudentReport.Grades.Add(new StudentReportGrade
             {
                 CourseName = grade.Course.Name,
                 DateTime = grade.DateGraded,

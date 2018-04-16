@@ -109,6 +109,8 @@
     <Compile Include="Business\Entity\User.cs" />
     <Compile Include="Business\StudentBLL.cs" />
     <Compile Include="Business\TeacherBll.cs" />
+    <Compile Include="Business\Validator\IGenericValidator.cs" />
+    <Compile Include="Business\Validator\UserValidator.cs" />
     <Compile Include="DataAccess\IUniversityDbContext.cs" />
     <Compile Include="DataAccess\Repository\CourseRepository.cs" />
     <Compile Include="DataAccess\Repository\ICourseRepository.cs" />
@@ -126,7 +128,7 @@
     <Compile Include="Reporting\IStudentReportBuilder.cs" />
     <Compile Include="Reporting\MongoDbStudentReportBody.cs" />
     <Compile Include="Reporting\MongoDbStudentReportBuilder.cs" />
-    <Compile Include="Reporting\ReportGrade.cs" />
+    <Compile Include="Reporting\StudentReportGrade.cs" />
     <Compile Include="Reporting\StudentPdfReportBody.cs" />
     <Compile Include="Reporting\StudentPdfReportBuilder.cs" />
     <Compile Include="Reporting\StudentReport.cs" />

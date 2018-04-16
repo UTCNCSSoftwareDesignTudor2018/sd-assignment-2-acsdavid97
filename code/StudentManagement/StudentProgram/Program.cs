@@ -27,11 +27,15 @@ namespace StudentProgram
             var studentRepository = container.Resolve<IStudentRepository>();
             var student = studentRepository.GetAll().First();
 
+            Application.ThreadException += (sender, args) => MessageBox.Show(args.Exception.Message);
+            Application.SetUnhandledExceptionMode(UnhandledExceptionMode.Automatic); 
+
             var studentBll = container.Resolve<StudentBll>();
+            var courseBll = container.Resolve<CourseBll>();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StudentForm(student, studentBll));
+            Application.Run(new StudentForm(student, studentBll, courseBll));
         }
 
     }

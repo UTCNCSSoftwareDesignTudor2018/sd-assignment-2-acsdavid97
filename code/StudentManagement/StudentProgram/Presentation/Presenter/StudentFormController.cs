@@ -8,11 +8,13 @@ namespace StudentProgram.Presentation.Presenter
     {
         private readonly StudentForm _studentForm;
         private readonly StudentBll _studentBll;
+        private readonly CourseBll _courseBll;
 
-        public StudentFormController(StudentForm studentForm, StudentBll studentBll)
+        public StudentFormController(StudentForm studentForm, StudentBll studentBll, CourseBll courseBll)
         {
             _studentForm = studentForm;
             _studentBll = studentBll;
+            _courseBll = courseBll;
             UpdateForm();
         }
 
@@ -55,7 +57,7 @@ namespace StudentProgram.Presentation.Presenter
             _studentForm.LoadStudent(updatedStudent);
 
             _studentForm.LoadEnrolledCourses(updatedStudent.Courses.ToList());
-            var availableCourses = _studentBll.GetCourses();
+            var availableCourses = _courseBll.GetCourses();
             foreach(var course in updatedStudent.Courses)
             {
                 availableCourses.Remove(course);

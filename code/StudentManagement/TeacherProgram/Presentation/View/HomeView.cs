@@ -15,11 +15,13 @@ namespace TeacherProgram.Presentation.View
         private readonly StudentEditView _studentEditView;
         private readonly CourseEditView _courseEditView;
         private readonly TeacherEditView _teacherEditView;
-        public HomeView(StudentEditView studentEditView, TeacherEditView teacherEditView, CourseEditView courseEditView)
+        private readonly ReportView _reportView;
+        public HomeView(StudentEditView studentEditView, TeacherEditView teacherEditView, CourseEditView courseEditView, ReportView reportView)
         {
             InitializeComponent();
             _studentEditView = studentEditView;
             _courseEditView = courseEditView;
+            _reportView = reportView;
             _teacherEditView = teacherEditView;
         }
 
@@ -42,6 +44,13 @@ namespace TeacherProgram.Presentation.View
             _courseEditView.ControlBox = false;
             _courseEditView.Show();
             _courseEditView.UpdateUi();
+        }
+
+        private void reportButton_Click(object sender, EventArgs e)
+        {
+            _reportView.ControlBox = false;
+            _reportView.Show();
+            _reportView.UpdateUi();
         }
     }
 }

@@ -9,6 +9,9 @@ using StudentManagement.DataAccess.Repository;
 
 namespace StudentManagement.Business
 {
+    /// <summary>
+    /// Business logic operations for Courses.
+    /// </summary>
     public class CourseBll
     {
         private readonly ICourseRepository _courseRepository;

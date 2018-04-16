@@ -21,7 +21,8 @@ namespace StudentManagement.DataAccess.Repository.Tests
         {
             _mongoRepo.Insert(new StudentReport
             {
-                Grades = new List<ReportGrade>(),
+                Grades = new List<StudentReportGrade>(),
+                StudentName = "Test",
                 StudentId = 42
             });
         }

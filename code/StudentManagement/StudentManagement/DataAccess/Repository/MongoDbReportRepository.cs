@@ -26,7 +26,7 @@ namespace StudentManagement.DataAccess.Repository
 
         public IList<StudentReport> GetAll()
         {
-            throw new NotImplementedException();
+            return _db.GetCollection<StudentReport>("StudentReport").Find(_ => true).ToList();
         }
     }
 }

@@ -68,6 +68,7 @@ namespace StudentManagement.Business
 
         public void GenerateReport(Student student, DateTime startDate, DateTime endDate, string filePath)
         {
+            //todo: move
             using (var studentPdfBuilder = new StudentPdfReportBuilder(filePath))
             {
                 var studentPdfBody = studentPdfBuilder.CreateReportFor(student);
@@ -78,6 +79,19 @@ namespace StudentManagement.Business
 
                 studentPdfBody.CloseBody();
             }
+        }
+
+        public void GradeStudent(Student student, Course course, int mark)
+        {
+            var grade = new Grade
+            {
+                Course = course,
+                Mark = mark,
+                Student = student,
+                DateGraded = DateTime.Now
+            };
+            student.AddGrade(grade);
+            _studentRepository.Update(student);
         }
     }
 }

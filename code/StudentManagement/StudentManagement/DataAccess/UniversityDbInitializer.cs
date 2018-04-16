@@ -9,7 +9,7 @@ using StudentManagement.Business.Entity;
 
 namespace StudentManagement.DataAccess
 {
-    public class UniversityDbInitializer : DropCreateDatabaseAlways<UniversityDbContext>
+    public class UniversityDbInitializer : DropCreateDatabaseIfModelChanges<UniversityDbContext>
     {
 
         protected override void Seed(UniversityDbContext context)

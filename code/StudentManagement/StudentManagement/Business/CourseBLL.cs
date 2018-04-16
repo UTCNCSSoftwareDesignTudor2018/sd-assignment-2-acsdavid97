@@ -22,5 +22,10 @@ namespace StudentManagement.Business
         {
             return _courseRepository.GetAll();
         }
+
+        public void AddCourse(Course course)
+        {
+            _courseRepository.Insert(course);
+        }
     }
 }

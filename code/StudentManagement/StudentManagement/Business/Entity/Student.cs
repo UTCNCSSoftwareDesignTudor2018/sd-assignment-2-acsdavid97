@@ -29,5 +29,10 @@ namespace StudentManagement.Business.Entity
 
             Courses.Add(course);
         }
+
+        public void AddGrade(Grade grade)
+        {
+            Grades.Add(grade);
+        }
     }
 }

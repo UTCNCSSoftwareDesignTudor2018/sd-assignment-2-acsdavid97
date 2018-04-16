@@ -16,7 +16,6 @@ namespace StudentManagement.Reporting
             _location = location;
         }
 
-
         public IStudentReportBody CreateReportFor(Student student)
         {
             PdfDocument = new Document();

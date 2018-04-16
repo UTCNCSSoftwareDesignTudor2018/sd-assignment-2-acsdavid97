@@ -14,7 +14,7 @@ namespace StudentManagement.Business.Tests
         [TestMethod()]
         public void GenerateReportGenerateReportTest()
         {
-            var studentBll = new StudentBll();
+
         }
     }
 }

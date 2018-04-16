@@ -29,24 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.gradeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.courseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.teacherView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CardNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PersonalNumericalCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.teacherListBinding = new System.Windows.Forms.BindingSource(this.components);
-            this.coursesTableAdapter1 = new StudentManagement.UniversityDbDataSetTableAdapters.CoursesTableAdapter();
-            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.teacherDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.courseView = new System.Windows.Forms.DataGridView();
             this.deleteButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
             this.updateButton = new System.Windows.Forms.Button();
             this.addressText = new System.Windows.Forms.TextBox();
-            this.teacherBinding = new System.Windows.Forms.BindingSource(this.components);
             this.addressLabel = new System.Windows.Forms.Label();
             this.pncText = new System.Windows.Forms.TextBox();
             this.personalNumbericalCodeLabel = new System.Windows.Forms.Label();
@@ -54,22 +45,24 @@
             this.cardNumberLabel = new System.Windows.Forms.Label();
             this.nameText = new System.Windows.Forms.TextBox();
             this.nameLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.gradeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).BeginInit();
+            this.coursesTableAdapter1 = new StudentManagement.UniversityDbDataSetTableAdapters.CoursesTableAdapter();
+            this.teacherBinding = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.teacherListBinding = new System.Windows.Forms.BindingSource(this.components);
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.teacherDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gradeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.teacherView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teacherListBinding)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teacherBinding)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teacherListBinding)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gradeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // gradeBindingSource
-            // 
-            this.gradeBindingSource.DataSource = typeof(StudentManagement.Business.Entity.Grade);
-            // 
-            // courseBindingSource
-            // 
-            this.courseBindingSource.DataSource = typeof(StudentManagement.Business.Entity.Course);
             // 
             // teacherView
             // 
@@ -90,53 +83,26 @@
             this.teacherView.TabIndex = 3;
             this.teacherView.SelectionChanged += new System.EventHandler(this.teacherView_SelectionChanged);
             // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
             // CardNumber
             // 
             this.CardNumber.DataPropertyName = "CardNumber";
             this.CardNumber.HeaderText = "CardNumber";
             this.CardNumber.Name = "CardNumber";
+            this.CardNumber.ReadOnly = true;
             // 
             // PersonalNumericalCode
             // 
             this.PersonalNumericalCode.DataPropertyName = "PersonalNumericalCode";
             this.PersonalNumericalCode.HeaderText = "PersonalNumericalCode";
             this.PersonalNumericalCode.Name = "PersonalNumericalCode";
+            this.PersonalNumericalCode.ReadOnly = true;
             // 
             // Address
             // 
             this.Address.DataPropertyName = "Address";
             this.Address.HeaderText = "Address";
             this.Address.Name = "Address";
-            // 
-            // teacherListBinding
-            // 
-            this.teacherListBinding.DataSource = typeof(StudentManagement.Business.Entity.Teacher);
-            // 
-            // coursesTableAdapter1
-            // 
-            this.coursesTableAdapter1.ClearBeforeFill = true;
-            // 
-            // studentBindingSource
-            // 
-            this.studentBindingSource.DataSource = typeof(StudentManagement.Business.Entity.Student);
-            // 
-            // teacherDataGridViewTextBoxColumn
-            // 
-            this.teacherDataGridViewTextBoxColumn.DataPropertyName = "Teacher";
-            this.teacherDataGridViewTextBoxColumn.HeaderText = "Teacher";
-            this.teacherDataGridViewTextBoxColumn.Name = "teacherDataGridViewTextBoxColumn";
-            // 
-            // nameDataGridViewTextBoxColumn1
-            // 
-            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            this.Address.ReadOnly = true;
             // 
             // courseView
             // 
@@ -188,10 +154,6 @@
             this.addressText.Name = "addressText";
             this.addressText.Size = new System.Drawing.Size(192, 20);
             this.addressText.TabIndex = 33;
-            // 
-            // teacherBinding
-            // 
-            this.teacherBinding.DataSource = typeof(StudentManagement.Business.Entity.Teacher);
             // 
             // addressLabel
             // 
@@ -253,11 +215,65 @@
             this.nameLabel.TabIndex = 24;
             this.nameLabel.Text = "Name:";
             // 
+            // coursesTableAdapter1
+            // 
+            this.coursesTableAdapter1.ClearBeforeFill = true;
+            // 
+            // teacherBinding
+            // 
+            this.teacherBinding.DataSource = typeof(StudentManagement.Business.Entity.Teacher);
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // teacherListBinding
+            // 
+            this.teacherListBinding.DataSource = typeof(StudentManagement.Business.Entity.Teacher);
+            // 
+            // nameDataGridViewTextBoxColumn1
+            // 
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            // 
+            // teacherDataGridViewTextBoxColumn
+            // 
+            this.teacherDataGridViewTextBoxColumn.DataPropertyName = "Teacher";
+            this.teacherDataGridViewTextBoxColumn.HeaderText = "Teacher";
+            this.teacherDataGridViewTextBoxColumn.Name = "teacherDataGridViewTextBoxColumn";
+            // 
+            // courseBindingSource
+            // 
+            this.courseBindingSource.DataSource = typeof(StudentManagement.Business.Entity.Course);
+            // 
+            // gradeBindingSource
+            // 
+            this.gradeBindingSource.DataSource = typeof(StudentManagement.Business.Entity.Grade);
+            // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataSource = typeof(StudentManagement.Business.Entity.Student);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1047, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(104, 23);
+            this.button1.TabIndex = 37;
+            this.button1.Text = "Close";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // TeacherEditView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1163, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.updateButton);
@@ -273,13 +289,13 @@
             this.Controls.Add(this.courseView);
             this.Name = "TeacherEditView";
             this.Text = "TeacherEditView";
-            ((System.ComponentModel.ISupportInitialize)(this.gradeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teacherView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teacherListBinding)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teacherBinding)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teacherListBinding)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gradeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,6 +327,7 @@
         private System.Windows.Forms.TextBox nameText;
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.BindingSource teacherBinding;
+        private System.Windows.Forms.Button button1;
     }
 }
 

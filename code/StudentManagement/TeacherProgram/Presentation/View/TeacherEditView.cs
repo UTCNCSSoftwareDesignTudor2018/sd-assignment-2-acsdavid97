@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
 using StudentManagement.Business;
@@ -51,6 +52,19 @@ namespace TeacherProgram.Presentation.View
         private void updateButton_Click(object sender, System.EventArgs e)
         {
             _teacherFormPresenter.UpdateTeacher(_teacher);
+        }
+
+        private void button1_Click(object sender, System.EventArgs e)
+        {
+            this.Hide();
+        }
+
+
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+
+            _teacherFormPresenter.UpdateForm();
         }
     }
 }

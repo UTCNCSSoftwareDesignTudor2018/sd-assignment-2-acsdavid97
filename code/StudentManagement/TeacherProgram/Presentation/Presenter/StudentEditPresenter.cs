@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using StudentManagement.Business;
@@ -20,7 +21,7 @@ namespace TeacherProgram.Presentation.Presenter
             UpdateForm();
         }
 
-        private void UpdateForm()
+        internal void UpdateForm()
         {
             _studentEditView.LoadStudents(_studentBll.GetStudents());
 
@@ -75,6 +76,20 @@ namespace TeacherProgram.Presentation.Presenter
                     _studentBll.GenerateReport(student, startDate, endDate, filePath);
                 }
             }
+        }
+
+        public void GradeStudent(Student student, Course selectedStudentCourse, string markText)
+        {
+            if (selectedStudentCourse == null)
+            {
+                return;
+            }
+
+            var mark = int.Parse(markText);
+
+            _studentBll.GradeStudent(student, selectedStudentCourse, mark);
+
+            UpdateForm();
         }
     }
 }

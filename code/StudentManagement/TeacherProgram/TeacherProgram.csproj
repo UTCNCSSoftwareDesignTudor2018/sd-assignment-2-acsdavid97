@@ -81,12 +81,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContainerConfiguration.cs" />
+    <Compile Include="Presentation\Presenter\CourseViewEditPresenter.cs" />
     <Compile Include="Presentation\Presenter\StudentEditPresenter.cs" />
+    <Compile Include="Presentation\View\CourseEditView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\View\CourseEditView.Designer.cs">
+      <DependentUpon>CourseEditView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\View\GenerateStudentReportDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentation\View\GenerateStudentReportDialog.Designer.cs">
       <DependentUpon>GenerateStudentReportDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\View\HomeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\View\HomeView.Designer.cs">
+      <DependentUpon>HomeView.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\View\StudentEditView.cs">
       <SubType>Form</SubType>
@@ -103,8 +116,14 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Presentation\Presenter\TeacherFormPresenter.cs" />
+    <EmbeddedResource Include="Presentation\View\CourseEditView.resx">
+      <DependentUpon>CourseEditView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\View\GenerateStudentReportDialog.resx">
       <DependentUpon>GenerateStudentReportDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\View\HomeView.resx">
+      <DependentUpon>HomeView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\View\StudentEditView.resx">
       <DependentUpon>StudentEditView.cs</DependentUpon>

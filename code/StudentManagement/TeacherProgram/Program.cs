@@ -19,12 +19,10 @@ namespace TeacherProgram
         {
             var container = ContainerConfiguration.SetupUnityContainer();
 
-            var studentBll = container.Resolve<StudentBll>();
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            var teacherForm = container.Resolve<TeacherEditView>();
+            var teacherForm = container.Resolve<HomeView>();
             Application.Run(teacherForm);
         }
     }

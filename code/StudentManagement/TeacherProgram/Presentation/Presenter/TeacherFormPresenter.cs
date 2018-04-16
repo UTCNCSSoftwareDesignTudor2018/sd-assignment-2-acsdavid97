@@ -21,7 +21,7 @@ namespace TeacherProgram.Presentation.Presenter
             UpdateForm();
         }
 
-        private void UpdateForm()
+        internal void UpdateForm()
         {
             _teacherEditView.LoadTeachers(_teacherBll.GetTeachers());
         }

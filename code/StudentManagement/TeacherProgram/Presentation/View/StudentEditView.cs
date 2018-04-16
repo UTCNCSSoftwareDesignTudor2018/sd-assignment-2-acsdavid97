@@ -45,6 +45,7 @@ namespace TeacherProgram.Presentation.View
         }
 
         public Student SelectedStudent => studentView.CurrentRow?.DataBoundItem as Student;
+        public Course SelectedStudentCourse => studentCourseView.CurrentRow?.DataBoundItem as Course;
 
         private void studentView_SelectionChanged(object sender, EventArgs e)
         {
@@ -71,6 +72,23 @@ namespace TeacherProgram.Presentation.View
         private void generateReport_Click(object sender, EventArgs e)
         {
             _studentEditPresenter.GenerateReport(_student);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+
+            _studentEditPresenter.UpdateForm();
+        }
+
+        private void gradeStudentButton_Click(object sender, EventArgs e)
+        {
+            _studentEditPresenter.GradeStudent(_student, SelectedStudentCourse, markBox.Text);
         }
     }
 }

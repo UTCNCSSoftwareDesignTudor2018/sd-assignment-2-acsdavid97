@@ -126,9 +126,11 @@
     <Compile Include="Reporting\IStudentReportBuilder.cs" />
     <Compile Include="Reporting\MongoDbStudentReportBody.cs" />
     <Compile Include="Reporting\MongoDbStudentReportBuilder.cs" />
+    <Compile Include="Reporting\ReportGrade.cs" />
     <Compile Include="Reporting\StudentPdfReportBody.cs" />
     <Compile Include="Reporting\StudentPdfReportBuilder.cs" />
     <Compile Include="Reporting\StudentReport.cs" />
+    <Compile Include="Reporting\StudentReportGenerator.cs" />
     <Compile Include="UniversityDbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

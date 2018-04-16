@@ -44,10 +44,8 @@ namespace TeacherProgram.Presentation.View
             this.Hide();
         }
 
-        protected override void OnShown(EventArgs e)
+        public void UpdateUi()
         {
-            base.OnShown(e);
-
             _courseViewPresenter.UpdateForm();
         }
     }

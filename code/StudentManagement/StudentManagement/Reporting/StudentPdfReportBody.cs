@@ -7,7 +7,7 @@ namespace StudentManagement.Reporting
     class StudentPdfReportBody : IStudentReportBody
     {
         private readonly StudentPdfReportBuilder _pdfBuilder;
-        private PdfPTable _table;
+        private readonly PdfPTable _table;
 
         private const int NrColumns = 3;
 
@@ -15,6 +15,10 @@ namespace StudentManagement.Reporting
         {
             _pdfBuilder = pdfBuilder;
             _table = new PdfPTable(NrColumns);
+            _table.AddCell("Course name");
+            _table.AddCell("Date graded");
+            _table.AddCell("Mark");
+
         }
 
         public IStudentReportBody AddGrade(Grade grade)

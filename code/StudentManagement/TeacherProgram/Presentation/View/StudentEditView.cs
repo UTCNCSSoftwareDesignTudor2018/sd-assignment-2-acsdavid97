@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using StudentManagement.Business;
 using StudentManagement.Business.Entity;
+using StudentManagement.Reporting;
 using TeacherProgram.Presentation.Presenter;
 
 namespace TeacherProgram.Presentation.View
@@ -79,10 +80,8 @@ namespace TeacherProgram.Presentation.View
             this.Hide();
         }
 
-        protected override void OnShown(EventArgs e)
+        public void UpdateUi()
         {
-            base.OnShown(e);
-
             _studentEditPresenter.UpdateForm();
         }
 

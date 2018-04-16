@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using MongoDB.Driver;
+using StudentManagement.Business.Entity;
 using StudentManagement.Reporting;
 
 namespace StudentManagement.DataAccess.Repository
@@ -19,6 +20,7 @@ namespace StudentManagement.DataAccess.Repository
         public void Insert(StudentReport studentReport)
         {
             var studentCollection = _db.GetCollection<StudentReport>("StudentReport");
+
             studentCollection.InsertOne(studentReport);
         }
 

@@ -5,6 +5,7 @@ using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MongoDB.Driver;
 using StudentManagement.Business.Entity;
 using StudentManagement.DataAccess;
 using StudentManagement.DataAccess.Repository;
@@ -66,20 +67,7 @@ namespace StudentManagement.Business
             _studentRepository.Delete(student);
         }
 
-        public void GenerateReport(Student student, DateTime startDate, DateTime endDate, string filePath)
-        {
-            //todo: move
-            using (var studentPdfBuilder = new StudentPdfReportBuilder(filePath))
-            {
-                var studentPdfBody = studentPdfBuilder.CreateReportFor(student);
-                foreach (var grade in student.Grades)
-                {
-                    studentPdfBody.AddGrade(grade);
-                }
 
-                studentPdfBody.CloseBody();
-            }
-        }
 
         public void GradeStudent(Student student, Course course, int mark)
         {

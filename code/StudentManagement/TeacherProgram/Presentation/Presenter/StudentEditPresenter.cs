@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using StudentManagement.Business;
 using StudentManagement.Business.Entity;
+using StudentManagement.Reporting;
 using TeacherProgram.Presentation.View;
 
 namespace TeacherProgram.Presentation.Presenter
@@ -72,10 +73,30 @@ namespace TeacherProgram.Presentation.Presenter
                 {
                     var startDate = studentGenerateDialog.GetStartDate();
                     var endDate = studentGenerateDialog.GetEndDate();
-                    var filePath = studentGenerateDialog.GetPath();
-                    _studentBll.GenerateReport(student, startDate, endDate, filePath);
+                    using (var reportGenerator = CreateGenerator(studentGenerateDialog))
+                    {
+                        reportGenerator.GenerateReport(student, startDate, endDate);
+                    }
                 }
             }
+        }
+
+        public StudentReportGenerator CreateGenerator(GenerateStudentReportDialog dialog)
+        {
+            if (dialog.PdfSelected)
+            {
+                var filePath = dialog.GetPath();
+                var reportGenerator = StudentReportGenerator.CreatePdfGenerator(filePath);
+                return reportGenerator;
+            }
+
+            if (dialog.MongoDbSelected)
+            {
+                var reportGenerator = StudentReportGenerator.CreateMongoDbGenerator();
+                return reportGenerator;
+            }
+
+            throw new InvalidOperationException();
         }
 
         public void GradeStudent(Student student, Course selectedStudentCourse, string markText)

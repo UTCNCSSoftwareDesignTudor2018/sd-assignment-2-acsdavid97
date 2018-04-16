@@ -5,7 +5,7 @@ using StudentManagement.Business.Entity;
 
 namespace StudentManagement.Reporting
 {
-    class StudentPdfReportBuilder : IStudentReportBuilder
+    public class StudentPdfReportBuilder : IStudentReportBuilder
     {
         internal Document PdfDocument { get; private set; }
         private PdfWriter _pdfWriter;

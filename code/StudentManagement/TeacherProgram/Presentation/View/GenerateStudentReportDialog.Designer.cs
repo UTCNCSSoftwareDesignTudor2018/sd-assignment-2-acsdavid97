@@ -35,6 +35,8 @@
             this.generateButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.pdfButton = new System.Windows.Forms.RadioButton();
+            this.mongoDbButton = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // endDatePicker
@@ -91,6 +93,29 @@
             // 
             this.saveFileDialog1.Filter = "\"PDF files|*.pdf\"";
             // 
+            // pdfButton
+            // 
+            this.pdfButton.AutoSize = true;
+            this.pdfButton.Checked = true;
+            this.pdfButton.Location = new System.Drawing.Point(298, 228);
+            this.pdfButton.Name = "pdfButton";
+            this.pdfButton.Size = new System.Drawing.Size(62, 17);
+            this.pdfButton.TabIndex = 6;
+            this.pdfButton.TabStop = true;
+            this.pdfButton.Text = "PDF file";
+            this.pdfButton.UseVisualStyleBackColor = true;
+            // 
+            // mongoDbButton
+            // 
+            this.mongoDbButton.AutoSize = true;
+            this.mongoDbButton.Location = new System.Drawing.Point(298, 252);
+            this.mongoDbButton.Name = "mongoDbButton";
+            this.mongoDbButton.Size = new System.Drawing.Size(75, 17);
+            this.mongoDbButton.TabIndex = 7;
+            this.mongoDbButton.TabStop = true;
+            this.mongoDbButton.Text = "Mongo Db";
+            this.mongoDbButton.UseVisualStyleBackColor = true;
+            // 
             // GenerateStudentReportDialog
             // 
             this.AcceptButton = this.generateButton;
@@ -98,6 +123,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(656, 295);
+            this.Controls.Add(this.mongoDbButton);
+            this.Controls.Add(this.pdfButton);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.generateButton);
             this.Controls.Add(this.label2);
@@ -121,5 +148,7 @@
         private System.Windows.Forms.Button generateButton;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.RadioButton pdfButton;
+        private System.Windows.Forms.RadioButton mongoDbButton;
     }
 }

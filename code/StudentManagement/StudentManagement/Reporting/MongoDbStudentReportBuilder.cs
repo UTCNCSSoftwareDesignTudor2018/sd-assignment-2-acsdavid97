@@ -7,24 +7,23 @@ namespace StudentManagement.Reporting
     class MongoDbStudentReportBuilder : IStudentReportBuilder
     {
         internal StudentReport StudentReport { get; private set; }
-        private readonly IReportRepository _reportRepository;
+        internal readonly IReportRepository ReportRepository;
 
         public MongoDbStudentReportBuilder(IReportRepository reportRepository)
         {
-            _reportRepository = reportRepository;
+            ReportRepository = reportRepository;
         }
 
         public void Dispose()
         {
-            _reportRepository.Insert(StudentReport);
         }
 
         public IStudentReportBody CreateReportFor(Student student)
         {
             StudentReport = new StudentReport
             {
-                Student = student,
-                Grades = new List<Grade>()
+                StudentId = student.UserId,
+                Grades = new List<ReportGrade>()
             };
 
             return new MongoDbStudentReportBody(this);

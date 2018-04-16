@@ -21,10 +21,8 @@ namespace StudentManagement.DataAccess.Repository.Tests
         {
             _mongoRepo.Insert(new StudentReport
             {
-                DateEnd = DateTime.Now,
-                DateStart = DateTime.Now,
-                Grades = new List<Grade>(),
-                Student = new Student()
+                Grades = new List<ReportGrade>(),
+                StudentId = 42
             });
         }
     }

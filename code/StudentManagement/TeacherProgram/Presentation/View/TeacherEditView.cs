@@ -60,10 +60,8 @@ namespace TeacherProgram.Presentation.View
         }
 
 
-        protected override void OnShown(EventArgs e)
+        public void UpdateUi()
         {
-            base.OnShown(e);
-
             _teacherFormPresenter.UpdateForm();
         }
     }

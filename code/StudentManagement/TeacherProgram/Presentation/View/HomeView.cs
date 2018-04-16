@@ -27,18 +27,21 @@ namespace TeacherProgram.Presentation.View
         {
             _studentEditView.ControlBox = false;
             _studentEditView.Show();
+            _studentEditView.UpdateUi();
         }
 
         private void teachersButton_Click(object sender, EventArgs e)
         {
             _teacherEditView.ControlBox = false;
             _teacherEditView.Show();
+            _teacherEditView.UpdateUi();
         }
 
         private void coursesButton_Click(object sender, EventArgs e)
         {
             _courseEditView.ControlBox = false;
             _courseEditView.Show();
+            _courseEditView.UpdateUi();
         }
     }
 }

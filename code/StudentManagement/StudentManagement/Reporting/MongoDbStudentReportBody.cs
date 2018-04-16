@@ -1,4 +1,5 @@
-﻿using StudentManagement.Business.Entity;
+﻿using System;
+using StudentManagement.Business.Entity;
 
 namespace StudentManagement.Reporting
 {
@@ -12,12 +13,18 @@ namespace StudentManagement.Reporting
 
         public IStudentReportBody AddGrade(Grade grade)
         {
-            _reportBuilder.StudentReport.Grades.Add(grade);
+            _reportBuilder.StudentReport.Grades.Add(new ReportGrade
+            {
+                CourseName = grade.Course.Name,
+                DateTime = grade.DateGraded,
+                Mark = grade.Mark
+            });
             return this;
         }
 
         public IStudentReportBuilder CloseBody()
         {
+            _reportBuilder.ReportRepository.Insert(_reportBuilder.StudentReport);
             return _reportBuilder;
         }
     }

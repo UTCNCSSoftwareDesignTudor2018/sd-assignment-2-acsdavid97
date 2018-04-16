@@ -19,12 +19,24 @@ namespace TeacherProgram.Presentation.View
 
         private void generateButton_Click(object sender, EventArgs e)
         {
-            if (this.saveFileDialog1.ShowDialog() == DialogResult.OK)
+            if (pdfButton.Checked)
+            {
+                if (this.saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    this.DialogResult = DialogResult.OK;
+                    this.Hide();
+                }
+            }
+
+            if (mongoDbButton.Checked)
             {
                 this.DialogResult = DialogResult.OK;
                 this.Hide();
             }
         }
+
+        public bool PdfSelected => pdfButton.Checked;
+        public bool MongoDbSelected => mongoDbButton.Checked;
 
         public DateTime GetStartDate()
         {
